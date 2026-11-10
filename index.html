@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pure, 100% chemical-free organic essentials directly from traditional farms to your home. A2 Desi Ghee, Stone-ground Atta, Traditional Rice, Unpolished Dals, and Cold-pressed Oils.">
+  <title>Vedic Roots Organics | Pure Farm-to-Home Essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="announcement">
+    <div class="announcement-content">
+      <span>🌿 100% CERTIFIED ORGANIC & PESTICIDE-FREE</span>
+      <span class="announcement-sep">•</span>
+      <span>FREE PAN-INDIA DELIVERY ON ORDERS ABOVE ₹799</span>
+      <span class="announcement-sep">•</span>
+      <span>USE CODE <strong>ORGANIC10</strong> FOR FLAT 10% OFF</span>
+      <span class="announcement-sep">•</span>
+      <span>⚡ FRESH HARVEST DISPATCHED DAILY</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="brand-icon">🌱</span>
+      <div class="brand-text">
+        <strong id="storeNameDisplay">VEDIC ROOTS ORGANICS</strong>
+        <small id="storeTaglineDisplay">DIRECT FROM FARMS TO YOUR HOME</small>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#shop">All Products</a>
+      <a href="#whyus">Why Choose Us</a>
+      <a href="#about">Our Story</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+
+    <!-- Header Actions (Search, Wishlist, WhatsApp, Bag, Mobile Toggle) -->
+    <div class="header-actions">
+      <!-- Live Search Box with Dropdown -->
+      <div class="header-search-wrap">
+        <form class="header-search-form" id="headerSearchForm" onsubmit="event.preventDefault();">
+          <span class="header-search-icon">🔍</span>
+          <input type="search" id="headerSearchInput" placeholder="Search cow ghee, buffalo ghee, wheat, sarso, dal, cow dung, bajra, juar..." autocomplete="off" aria-label="Search items">
+          <button type="button" class="header-search-clear" id="headerSearchClear">×</button>
+        </form>
+        <!-- Search Autocomplete Dropdown -->
+        <div class="search-dropdown-menu" id="searchDropdownMenu">
+          <div class="search-dropdown-section-title">Popular Farm Searches</div>
+          <div class="search-popular-tags">
+            <button class="search-tag-chip" data-search="Cow Ghee">Desi Cow Ghee</button>
+            <button class="search-tag-chip" data-search="Buffalo Ghee">Buffalo Ghee</button>
+            <button class="search-tag-chip" data-search="Sharbati Wheat">Sharbati Wheat</button>
+            <button class="search-tag-chip" data-search="Sarso Tel">Sarso Tel</button>
+            <button class="search-tag-chip" data-search="Kala Chana">Desi Kala Chana</button>
+            <button class="search-tag-chip" data-search="Toor Dal">Unpolished Dal</button>
+            <button class="search-tag-chip" data-search="Cow Dung">Cow Dung Uple</button>
+            <button class="search-tag-chip" data-search="Bajra">Desi Bajra</button>
+            <button class="search-tag-chip" data-search="Juar">Desi Juar</button>
+          </div>
+          <div class="search-dropdown-section-title" id="searchResultsHeading">Quick Product Matches</div>
+          <div class="search-dropdown-items" id="searchDropdownResults">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Wishlist Toggle Button -->
+      <button class="wishlist-btn-header" id="wishlistOpen" aria-label="View Saved Wishlist" title="View Saved Wishlist">
+        <span>❤️</span>
+        <span class="wishlist-badge" id="wishlistCount">0</span>
+      </button>
+
+      <!-- WhatsApp Help Button -->
+      <a href="https://wa.me/919511355866" target="_blank" class="header-whatsapp-btn" id="headerWhatsApp" title="Chat on WhatsApp">
+        <span class="wa-icon">💬</span>
+        <span class="wa-text">Help</span>
+      </a>
+
+      <!-- Shopping Bag Button -->
+      <button class="cart-btn" id="cartOpen" aria-label="View Shopping Bag">
+        <span class="cart-btn-icon">🛍️</span>
+        <span class="cart-btn-label">Bag</span>
+        <span class="cart-badge" id="cartCount">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-header">
+      <strong>Vedic Roots Menu</strong>
+      <button class="close-btn" id="closeMobileMenu">×</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#" class="mobile-link">Home</a>
+      <a href="#categories" class="mobile-link">Product Categories</a>
+      <a href="#shop" class="mobile-link">All Products</a>
+      <a href="#whyus" class="mobile-link">Why Choose Us</a>
+      <a href="#about" class="mobile-link">Our Story</a>
+      <a href="#testimonials" class="mobile-link">Customer Reviews</a>
+      <a href="#faq" class="mobile-link">FAQs</a>
+      <a href="#" class="mobile-link" id="mobileWishlistBtn">❤️ My Wishlist (<span id="mobileWishlistCount">0</span>)</a>
+      <a href="#" class="mobile-link" id="mobileTrackBtn">📦 Track Order</a>
+      <a href="#" class="mobile-link" id="mobileAdminBtn">⚙️ Store Owner Portal</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- 4. Attractive Hero Banner -->
+    <section class="hero" id="homeHero">
+      <div class="hero-copy">
+        <div class="badge-pill">🌾 100% TRADITIONAL DESI FARM STAPLES</div>
+        <h1>Pure, traditional food<br><em>straight from rural farms.</em></h1>
+        <p class="hero-text">
+          No synthetic preservatives, no artificial polishes, no industrial refining. We deliver authentic Desi Cow & Buffalo Ghee, stone-ground Sharbati wheat flour, unpolished dals, cold-pressed Sarso oil, sacred cow dung uple, and ancient millets directly to your doorstep.
+        </p>
+        
+        <!-- 5. Shop Now & CTA Buttons -->
+        <div class="hero-actions">
+          <a class="primary-btn" href="#shop" id="heroShopNowBtn">
+            Explore 9 Farm Staples
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="secondary-btn" href="#categories">
+            🌾 Shop by Category
+          </a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <strong>100%</strong>
+            <span>Pure & Additive-Free</span>
+          </div>
+          <div class="highlight-sep"></div>
+          <div class="highlight-item">
+            <strong>Bilona</strong>
+            <span>Curd-Churned Desi Ghee</span>
+          </div>
+          <div class="highlight-sep"></div>
+          <div class="highlight-item">
+            <strong>Wood Ghani</strong>
+            <span>Cold-Pressed Sarso Tel</span>
+          </div>
+          <div class="highlight-sep"></div>
+          <div class="highlight-item">
+            <strong>Small Batch</strong>
+            <span>Stone Chakki & Sun-Dried</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <img src="images/cow-ghee.jpg" alt="Pure Vedic A2 Desi Cow Bilona Ghee" class="hero-main-img">
+        </div>
+        <div class="hero-trust-bar">
+          <div class="hero-trust-chip">
+            <span class="chip-emoji">🏺</span>
+            <span><strong>Traditional Bilona</strong> Hand-churned from cultured curd</span>
+          </div>
+          <div class="hero-trust-chip">
+            <span class="chip-emoji">🚚</span>
+            <span><strong>Pan-India Express</strong> Eco Glass & Tin Shockproof Packing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+      <div class="trust-item">
+        <div class="trust-icon">🏺</div>
+        <div>
+          <h4>Vedic Bilona Churned</h4>
+          <p>A2 Gir Cow whole curd churned slowly in earthen pots</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🪵</div>
+        <div>
+          <h4>Kachi Ghani Wood-Pressed</h4>
+          <p>Cold-extracted below 40°C preserving vitamins & aroma</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🌾</div>
+        <div>
+          <h4>Stone-Ground & Unpolished</h4>
+          <p>Chakki fresh atta with 100% bran & untouched natural pulses</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <div>
+          <h4>FSSAI & Jaivik Bharat</h4>
+          <p>Strict NABL multi-residue pesticide tests from farm to doorstep</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Categories Visual Explorer Strip (10 Categories) -->
+    <section class="category-explorer-strip" id="categories">
+      <div class="category-explorer-header">
+        <div>
+          <span class="section-tag">EXPLORE PANTRY BY CATEGORY</span>
+          <h2>Shop by Traditional Harvest</h2>
+        </div>
+        <a href="#shop" class="view-all-link">View All Pantry Essentials →</a>
+      </div>
+      
+      <div class="category-chips-scroll" id="categoryChipsContainer">
+        <!-- 10 Categories injected dynamically by app.js -->
+      </div>
+    </section>
+
+
+
+    <!-- All Farm Products Section -->
+    <section class="shop-section" id="shop">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">100% PURE & DIRECT FROM FARMS</span>
+          <h2>All Farm Products</h2>
+          <p>Pure Cow & Buffalo Ghee, Wheat, Sarso Tel, Chana, Dal, Cow Dung Uple, Bajra & Juar.</p>
+        </div>
+        <div class="shop-controls">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input id="searchInput" type="search" placeholder="Search ghee, wheat, sarso, chana, dal, uple, bajra, juar..." aria-label="Search products">
+          </div>
+          <div class="sort-box">
+            <label for="sortSelect">Sort:</label>
+            <select id="sortSelect">
+              <option value="featured">Default Order</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Customer Rating</option>
+              <option value="name">Product Name (A-Z)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Filter Tabs (10 Categories) -->
+      <div class="category-tabs" id="categoryFilters">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Active Filters & Count Info -->
+      <div class="filter-status-bar">
+        <span id="productCountText">Showing products</span>
+        <button id="clearFiltersBtn" class="clear-btn" style="display:none;">Clear Filters ✕</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Products rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- Genuine Pan-India Shipping & Doorstep Delivery Strip -->
+    <section class="shipping-info-strip">
+      <div class="shipping-info-container">
+        <div class="shipping-item">
+          <span class="shipping-item-icon">🚚</span>
+          <div class="shipping-item-text">
+            <strong>Pan-India Doorstep Dispatch</strong>
+            <p>Dispatched directly from regional farm centers via speed post & express couriers. Metros: 2–4 days; Other regions: 3–6 business days.</p>
+          </div>
+        </div>
+        <div class="shipping-item">
+          <span class="shipping-item-icon">🛡️</span>
+          <div class="shipping-item-text">
+            <strong>Fragile Glass & Tin Protection</strong>
+            <p>A2 Ghee glass jars and cold-pressed oil tins are packed in multi-layered shockproof cushioning with a 100% replacement guarantee if damaged in transit.</p>
+          </div>
+        </div>
+        <div class="shipping-item">
+          <span class="shipping-item-icon">💬</span>
+          <div class="shipping-item-text">
+            <strong>Remote Pincode & Custom Dispatch</strong>
+            <p>Need delivery to a remote pin code or want to order 25kg+ bulk bags? Message us directly on WhatsApp for personal coordination.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Why Choose Us Section -->
+    <section class="why-us-section" id="whyus">
+      <div class="section-header text-center">
+        <span class="section-tag">THE VEDIC ROOTS DIFFERENCE</span>
+        <h2>Why Choose Vedic Roots Organics?</h2>
+        <p>Pure nutrition, honest farming, and zero compromises on your family's health.</p>
+      </div>
+
+      <div class="why-us-grid">
+        <div class="why-card">
+          <div class="why-icon-bubble">🧪</div>
+          <h3>Pure, Chemical-Free Produce</h3>
+          <p>Sourced from traditional rainfed farms practicing natural soil enrichment. Free from synthetic pesticides, artificial colors, and chemical stabilizers.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-bubble">🏺</div>
+          <h3>Sacred Vedic Bilona Churning</h3>
+          <p>Our A2 Desi Cow Ghee is made using the 5-step Vedic method: cultured whole milk curd churned bidirectionally with wooden bilona, low fire simmered.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-bubble">🪵</div>
+          <h3>Kachi Ghani Wood-Pressed Oils</h3>
+          <p>Cold-extracted below 40°C in traditional wooden mortars (Lakdi Ghani). Zero chemical hexane solvents, no artificial deodorizers, no bleached refining.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-bubble">🌾</div>
+          <h3>Slow Stone Chakki Ground</h3>
+          <p>Our traditional flours are ground slowly on natural stone mills without heating, keeping 100% natural wheat germ, vitamins, and dietary bran intact.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-bubble">🤝</div>
+          <h3>Direct Rural Farmer Collective</h3>
+          <p>We work directly with traditional natural farming families, ensuring fair compensation and chemical-free soil stewardship.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-bubble">📦</div>
+          <h3>Secure Food-Grade Packaging</h3>
+          <p>Food-grade glass jars for pure Ghee, leakproof food tins for cold-pressed Sarso oil, and breathable eco bags for fresh stone-ground flour and pulses.</p>
+        </div>
+      </div>
+
+      <!-- Our Traditional Handcrafted Preparation Standards -->
+      <div class="purity-container">
+        <div class="section-header text-center">
+          <span class="section-tag">ARTISANAL INTEGRITY</span>
+          <h3>Our Traditional Preparation Standards</h3>
+          <p>How we prepare every jar, flour batch, and oil tin following Vedic guidelines.</p>
+        </div>
+
+        <div class="standards-grid">
+          <div class="standard-card">
+            <span class="standard-icon">🏺</span>
+            <h4>Cultured Curd Bilona Ghee</h4>
+            <p>Fresh cow and buffalo milk is first cultured into whole curd, churned slowly with wooden bilonas, and gently boiled on low flame to yield natural golden granules (*danedar*).</p>
+          </div>
+
+          <div class="standard-card">
+            <span class="standard-icon">🪵</span>
+            <h4>Lakdi Ghani Wood-Pressed Oil</h4>
+            <p>Native yellow mustard seeds are cold-extracted below 40°C in traditional wooden kolhus, preserving natural pungent aroma and essential fatty acids without chemical solvents.</p>
+          </div>
+
+          <div class="standard-card">
+            <span class="standard-icon">🌾</span>
+            <h4>Slow Stone Chakki Ground Atta</h4>
+            <p>Sehore Sharbati wheat, bajra, and juar are ground slowly on natural stone mills without heating, ensuring dietary fiber, wheat germ, and sweet natural taste remain untouched.</p>
+          </div>
+
+          <div class="standard-card">
+            <span class="standard-icon">🥣</span>
+            <h4>Naturally Sun-Dried & Unpolished</h4>
+            <p>Our Desi Kala Chana and Toor Dal are dried naturally under the sun and kept 100% unpolished, without artificial water washes or synthetic polish coatings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Customer Testimonials Section -->
+    <section class="reviews-section" id="testimonials">
+      <div class="section-header text-center">
+        <span class="section-tag">LOVED BY FAMILIES</span>
+        <h2>What Our Customers Say</h2>
+        <p>Real feedback from homes choosing pure organic staples across India.</p>
+      </div>
+
+      <!-- Testimonials Filter Tabs -->
+      <div class="testimonials-filter-bar">
+        <button class="test-filter-btn active" data-test-cat="all">All Reviews (4.9★)</button>
+        <button class="test-filter-btn" data-test-cat="ghee">A2 Desi Ghee</button>
+        <button class="test-filter-btn" data-test-cat="atta">Atta & Flours</button>
+        <button class="test-filter-btn" data-test-cat="oils">Cooking Oils & Dals</button>
+      </div>
+
+      <div class="reviews-grid" id="testimonialsGrid">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Farm Sourcing / Story Section -->
+    <section class="story-section" id="about">
+      <div class="story-wrapper">
+        <div class="story-img-box">
+          <img src="images/wheat.jpg" alt="Pure traditional wheat harvest" class="story-img">
+          <div class="story-stat-card">
+            <strong class="stat-num">100%</strong>
+            <span class="stat-label">Direct Farm Sourcing • Traditional Vedic Methods • Zero Middlemen</span>
+          </div>
+        </div>
+        <div class="story-content">
+          <span class="section-tag">ABOUT OUR COLLECTIVE</span>
+          <h2>Rooted in tradition: Pure food from soil to soul.</h2>
+          <p>
+            When you choose our A2 Bilona Ghee, stone-ground Sharbati Atta, wood-pressed Sarso oil, unpolished pulses, or organic ancient millets, you are bringing time-tested traditional nutrition back to your home. We work directly with natural growers who cultivate soil with indigenous cow manure, avoiding chemical fertilizers and synthetic sprays.
+          </p>
+          <div class="story-bullets">
+            <div class="story-bullet">
+              <span class="bullet-icon">🌾</span>
+              <div>
+                <strong>Heirloom Native Seeds</strong>
+                <p>Preserving indigenous, non-hybrid varieties of wheat, pulses, and millets for deep nutrition.</p>
+              </div>
+            </div>
+            <div class="story-bullet">
+              <span class="bullet-icon">🪵</span>
+              <div>
+                <strong>Sacred Vedic Preparation</strong>
+                <p>Curd-churned bilona ghee, wood-pressed cold oils, and slow stone chakki flour with full bran intact.</p>
+              </div>
+            </div>
+          </div>
+          <div class="story-actions">
+            <a href="https://wa.me/919511355866?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20organic%20farm%20harvest." target="_blank" class="primary-btn">
+              Connect with Farm Desk on WhatsApp ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ Section) -->
+    <section class="faq-section" id="faq">
+      <div class="section-header text-center">
+        <span class="section-tag">COMMON QUESTIONS</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our organic products, shipping, and ordering.</p>
+      </div>
+
+      <div class="faq-container">
+        <details class="faq-item" open>
+          <summary>How can I be certain your products are genuinely organic?</summary>
+          <div class="faq-body">
+            We partner directly with traditional farmers who cultivate crops without synthetic chemical fertilizers, pesticides, or GMO seeds. Our small-batch produce undergoes regular quality checks to ensure zero adulteration, authentic natural flavor, and purity.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the difference between regular market ghee and your A2 Bilona Ghee?</summary>
+          <div class="faq-body">
+            Most commercial supermarket ghee is boiled rapidly from leftover cream separated using high-heat industrial equipment. Our A2 Ghee is handcrafted following the traditional 5-step Bilona method: fresh A2 cow milk is cultured into curd, churned with a wooden bi-directional bilona, and the extracted makkhan is gently simmered over slow heat into golden, aromatic danedar ghee.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What are your delivery charges and shipping times across India?</summary>
+          <div class="faq-body">
+            We provide <strong>FREE doorstep delivery on all orders above ₹799</strong>. For smaller orders under ₹799, a nominal delivery charge of ₹60 applies. Express deliveries to metros arrive in 2–3 business days; other locations arrive in 3–5 days. Glass jars are packed in shock-absorbing eco-cushioning.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What payment methods do you accept?</summary>
+          <div class="faq-body">
+            You can pay securely via <strong>Direct UPI (Google Pay, PhonePe, Paytm, BHIM)</strong>, choose <strong>Cash on Delivery (COD)</strong>, or complete your order seamlessly via <strong>WhatsApp</strong>.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why are your dals and grains unpolished?</summary>
+          <div class="faq-body">
+            Commercial dals are frequently treated with artificial water washes and petroleum oils to give them an artificial shine, which strips the wholesome natural fiber and nutrients. Our Desi Kala Chana and Toor Dal remain 100% unpolished and sun-dried, preserving their natural taste, wholesome fiber, and plant proteins.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I place bulk or custom grocery orders for my family?</summary>
+          <div class="faq-body">
+            Yes! If you need 10kg+ bags of wheat, millets, or bulk ghee for festive occasions or monthly pantry supply, simply message us directly on WhatsApp at <strong>+91 95113 55866</strong> for direct-from-farm pricing and custom packing.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 12. Newsletter Subscription Section -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="newsletter-card">
+        <span class="badge-pill" style="background-color: rgba(255, 255, 255, 0.15); color: #ffda79; margin-bottom: 16px;">🌱 WELCOME TO VEDIC ROOTS</span>
+        <h2>Join Our Conscious Living Community</h2>
+        <p>Subscribe for seasonal harvest alerts, traditional recipes, and get <strong>₹100 OFF</strong> on your first farm order above ₹799.</p>
+        
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+          <button type="submit" class="newsletter-btn">Subscribe & Claim ₹100 OFF</button>
+        </form>
+
+        <div class="newsletter-coupon-reveal" id="newsletterCouponReveal">
+          <span>🎉 Welcome to Vedic Roots! Your coupon code:</span>
+          <strong>WELCOME100</strong>
+          <button type="button" class="copy-coupon-btn" data-coupon="WELCOME100" style="padding: 4px 10px; font-size: 0.74rem;">Copy & Apply</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13. Footer with Important Links -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <a class="brand footer-brand" href="#">
+          <span class="brand-icon">🌱</span>
+          <div class="brand-text">
+            <strong id="footerStoreName">VEDIC ROOTS ORGANICS</strong>
+            <small>FARM TO KITCHEN • 100% PURE</small>
+          </div>
+        </a>
+        <p class="footer-desc">
+          Bringing pure, traditionally harvested Indian pantry essentials directly from natural farming growers to your home. No chemicals, synthetic preservatives, or artificial polishes.
+        </p>
+        <div class="footer-contact-info">
+          <p>📞 Phone / WhatsApp: <a href="https://wa.me/919511355866" id="footerPhoneLink">+91 95113 55866</a></p>
+          <p>✉️ Email: <a href="mailto:support@vedicroots.in">support@vedicroots.in</a></p>
+          <p>📍 Operating Pan-India from Maharashtra & Madhya Pradesh</p>
+          <p>📜 FSSAI Standards & Food Safety Compliant</p>
+          <p>🌾 Natural & Chemical-Free Farming Practices</p>
+        </div>
+      </div>
+
+      <!-- Farm Product Categories in Footer -->
+      <div class="footer-col">
+        <h4>Pantry Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#shop" onclick="event.preventDefault(); filterByCategory('Desi Ghee');">🏺 Desi Ghee (Cow & Buffalo)</a></li>
+          <li><a href="#shop" onclick="event.preventDefault(); filterByCategory('Wheat & Atta');">🌾 Sharbati Wheat & Atta</a></li>
+          <li><a href="#shop" onclick="event.preventDefault(); filterByCategory('Sarso (Mustard)');">🫒 Wood-Pressed Sarso Tel</a></li>
+          <li><a href="#shop" onclick="event.preventDefault(); filterByCategory('Chana & Dal');">🥣 Desi Kala Chana & Dal</a></li>
+          <li><a href="#shop" onclick="event.preventDefault(); filterByCategory('Cow Dung Essentials');">🪵 Desi Cow Dung Cakes / Uple</a></li>
+          <li><a href="#shop" onclick="event.preventDefault(); filterByCategory('Bajra & Juar');">🌱 Organic Bajra & Juar Millets</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Care & Policies -->
+      <div class="footer-col">
+        <h4>Customer Care & Policies</h4>
+        <ul class="footer-links">
+          <li><a href="#" id="footerTrackBtn">📦 Track My Order</a></li>
+          <li><a href="#" id="footerShippingBtn">🚚 Shipping & Delivery Policy</a></li>
+          <li><a href="#" id="footerRefundBtn">🔄 Return & Refund Guarantee</a></li>
+          <li><a href="#" id="footerPrivacyBtn">🔒 Privacy Policy</a></li>
+          <li><a href="#" id="footerTermsBtn">📜 Terms & Conditions</a></li>
+          <li><a href="#faq">❓ Frequently Asked Questions</a></li>
+          <li><a href="#whyus">🌿 Our Purity Guarantee</a></li>
+          <li><a href="#about">🌾 About Our Farm Collective</a></li>
+          <li><a href="https://wa.me/919511355866?text=Hi,%20I%20need%20help%20with%20an%20order." target="_blank">💬 Direct WhatsApp Helpline</a></li>
+        </ul>
+      </div>
+
+      <!-- Business, Payments & Admin -->
+      <div class="footer-col">
+        <h4>Safe & Verified Shopping</h4>
+        <p class="small-text">Direct from traditional farming communities with 100% satisfaction guarantee on taste and freshness.</p>
+        
+        <div class="payment-badges" style="margin-top: 14px;">
+          <small>Accepted Payment Methods</small>
+          <div class="badge-icons">
+            <span class="pay-tag">⚡ UPI</span>
+            <span class="pay-tag">Google Pay</span>
+            <span class="pay-tag">PhonePe</span>
+            <span class="pay-tag">Paytm</span>
+            <span class="pay-tag">Cards</span>
+            <span class="pay-tag">NetBanking</span>
+            <span class="pay-tag">💵 COD</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px;">
+          <small style="display:block; color: #a7b7ad; margin-bottom: 8px;">Business Administration</small>
+          <button class="admin-login-btn" id="openAdminBtn">
+            ⚙️ Store Owner Portal
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> <span id="copyrightName">Vedic Roots Organics</span>. All rights reserved. Pure food from soil to soul.</p>
+      <div class="footer-legal">
+        <span>FSSAI Standards Compliant</span> • <span>Natural Farming Practices</span> • <span>100% Non-GMO Verified</span> • <span>Purity Tested</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Quick Order Button -->
+  <a href="https://wa.me/919511355866?text=Hello!%20I%20want%20to%20order%20organic%20staples." target="_blank" class="floating-whatsapp" id="floatingWhatsApp" title="Chat on WhatsApp">
+    <span class="wa-float-icon">💬</span>
+    <span class="wa-float-text">Order on WhatsApp</span>
+  </a>
+
+  <!-- Wishlist Slide-out Drawer -->
+  <aside class="wishlist-drawer" id="wishlistDrawer" aria-label="Saved Wishlist">
+    <div class="drawer-head">
+      <div class="drawer-title">
+        <h3>Saved Favorites</h3>
+        <span class="drawer-item-count" id="wishlistDrawerCount">0 items</span>
+      </div>
+      <button class="close-icon-btn" id="wishlistClose" aria-label="Close wishlist">×</button>
+    </div>
+    <div class="wishlist-items-container" id="wishlistItems">
+      <!-- Injected by app.js -->
+    </div>
+  </aside>
+
+  <!-- Cart Backdrop Overlay -->
+  <div class="overlay" id="cartOverlay"></div>
+
+  <!-- Shopping Cart Slide-out Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="drawer-head">
+      <div class="drawer-title">
+        <h3>Your Shopping Bag</h3>
+        <span class="drawer-item-count" id="drawerItemCount">0 items</span>
+      </div>
+      <button class="close-icon-btn" id="cartClose" aria-label="Close cart">×</button>
+    </div>
+
+    <!-- Free Delivery Progress Bar -->
+    <div class="free-shipping-bar">
+      <div class="shipping-progress-text" id="freeShippingText">
+        Add <strong>₹799</strong> more for <strong>FREE Delivery!</strong>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div id="cartItems" class="cart-items">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- Cart Bottom / Checkout Summary -->
+    <div class="cart-bottom">
+      <div class="coupon-box">
+        <input type="text" id="couponInput" placeholder="Coupon Code (e.g. ORGANIC10)" uppercase>
+        <button id="applyCouponBtn">Apply</button>
+      </div>
+      <div id="couponMessage" class="coupon-msg"></div>
+
+      <div class="cart-summary-lines">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div class="summary-line discount-line" id="discountRow" style="display:none;">
+          <span>Discount Applied</span>
+          <span id="cartDiscount">-₹0</span>
+        </div>
+        <div class="summary-line">
+          <span>Estimated Delivery</span>
+          <span id="cartShipping">₹0</span>
+        </div>
+        <div class="summary-line total-line">
+          <strong>Grand Total</strong>
+          <strong id="cartGrandTotal">₹0</strong>
+        </div>
+      </div>
+
+      <div class="cart-action-buttons">
+        <button class="primary-btn full-width" id="checkoutBtn">
+          Proceed to Order (<span id="cartTotalBtn">₹0</span>) →
+        </button>
+        <button class="whatsapp-btn full-width" id="whatsappCart">
+          <span>💬</span> Instant Order via WhatsApp
+        </button>
+      </div>
+      <p class="cart-secure-note">🔒 Safe & Direct Farm Delivery • 100% Replacement Guarantee</p>
+    </div>
+  </aside>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-card quick-view-card">
+      <button class="modal-close" id="quickViewClose">×</button>
+      <div class="quick-view-grid" id="quickViewContent">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card checkout-modal-card">
+      <button class="modal-close" id="checkoutClose">×</button>
+      <div class="checkout-header">
+        <span class="badge-pill">SECURE CHECKOUT</span>
+        <h3>Complete Your Order</h3>
+        <p>No upfront account required. Your direct farm order will be confirmed immediately.</p>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-grid">
+          <label class="form-group full-col">
+            <span>Full Name *</span>
+            <input type="text" name="name" id="custName" required placeholder="Enter full name">
+          </label>
+
+          <label class="form-group">
+            <span>WhatsApp / Mobile Number *</span>
+            <input type="tel" name="phone" id="custPhone" inputmode="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10-digit mobile number">
+          </label>
+
+          <label class="form-group">
+            <span>Email Address (Optional for invoice)</span>
+            <input type="email" name="email" id="custEmail" placeholder="your@email.com">
+          </label>
+
+          <label class="form-group full-col">
+            <span>Delivery Street Address *</span>
+            <textarea name="address" id="custAddress" rows="2" required placeholder="House/Flat No., Apartment, Street, Landmark"></textarea>
+          </label>
+
+          <label class="form-group">
+            <span>City *</span>
+            <input type="text" name="city" id="custCity" required placeholder="City / Town">
+          </label>
+
+          <label class="form-group">
+            <span>Pincode *</span>
+            <input type="text" name="pincode" id="custPincode" pattern="[0-9]{6}" maxlength="6" required placeholder="6-digit Pincode">
+          </label>
+
+          <label class="form-group full-col">
+            <span>Special Delivery Notes (Optional)</span>
+            <input type="text" name="notes" id="custNotes" placeholder="e.g. Ring bell, deliver in morning, etc.">
+          </label>
+        </div>
+
+        <!-- Payment Selection -->
+        <div class="payment-selection-box">
+          <h4>Choose Payment Method</h4>
+          <div class="payment-options">
+            <label class="payment-radio">
+              <input type="radio" name="paymentMethod" value="UPI" checked>
+              <div class="radio-content">
+                <strong>⚡ Direct UPI QR Code / Apps</strong>
+                <small>Pay instantly via Google Pay, PhonePe, Paytm or BHIM UPI</small>
+              </div>
+            </label>
+
+            <label class="payment-radio">
+              <input type="radio" name="paymentMethod" value="COD">
+              <div class="radio-content">
+                <strong>💵 Cash on Delivery (COD)</strong>
+                <small>Pay cash or UPI directly when your package is delivered</small>
+              </div>
+            </label>
+
+            <label class="payment-radio">
+              <input type="radio" name="paymentMethod" value="WhatsApp">
+              <div class="radio-content">
+                <strong>💬 Confirm & Pay on WhatsApp</strong>
+                <small>Our farm desk sends payment link and invoice via WhatsApp</small>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Order Total Preview -->
+        <div class="checkout-order-summary" id="checkoutSummaryPreview">
+          <!-- Summary injected dynamically -->
+        </div>
+
+        <button class="primary-btn full-width" type="submit" id="placeOrderSubmitBtn">
+          Confirm Order (<span id="placeOrderBtnTotal">₹0</span>) →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success / Invoice Modal -->
+  <div class="modal" id="orderSuccessModal">
+    <div class="modal-card success-modal-card">
+      <button class="modal-close" id="orderSuccessClose">×</button>
+      <div id="orderSuccessContent">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Track Order Modal -->
+  <div class="modal" id="trackOrderModal">
+    <div class="modal-card">
+      <button class="modal-close" id="trackOrderClose">×</button>
+      <span class="badge-pill">ORDER STATUS</span>
+      <h3>Track Your Farm Order</h3>
+      <p>Enter your 10-digit mobile number or Order ID to see current status and invoice.</p>
+      <div class="track-form-box">
+        <input type="text" id="trackQueryInput" placeholder="Enter Phone Number or Order ID (e.g. ORG-84920)">
+        <button class="primary-btn" id="searchOrderBtn">Find Order</button>
+      </div>
+      <div id="trackOrderResults" class="track-results-box">
+        <!-- Results injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Modal (Shipping, Refund, Privacy) -->
+  <div class="modal" id="policyModal">
+    <div class="modal-card policy-modal-card">
+      <button class="modal-close" id="policyClose">×</button>
+      <h3 id="policyModalTitle">Store Policy</h3>
+      <div id="policyModalBody" class="policy-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Store Owner / Admin Modal -->
+  <div class="modal" id="adminModal">
+    <div class="modal-card admin-modal-card">
+      <div class="admin-header">
+        <div>
+          <span class="badge-pill">STORE MANAGEMENT</span>
+          <h3>Business Owner Dashboard</h3>
+        </div>
+        <button class="modal-close" id="adminClose">×</button>
+      </div>
+
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="orders">Orders Ledger (<span id="adminOrdersCount">0</span>)</button>
+        <button class="admin-tab" data-tab="settings">Store Settings & WhatsApp</button>
+        <button class="admin-tab" data-tab="products">Products & Pricing</button>
+      </div>
+
+      <!-- Tab 1: Orders Ledger -->
+      <div class="admin-tab-pane active" id="adminTabOrders">
+        <div class="admin-toolbar">
+          <input type="search" id="adminOrderSearch" placeholder="Search orders by customer or ID...">
+          <button class="secondary-btn" id="exportOrdersCsv">Download CSV</button>
+        </div>
+        <div class="admin-orders-table-wrapper">
+          <table class="admin-table" id="adminOrdersTable">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Method</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 2: Store Settings -->
+      <div class="admin-tab-pane" id="adminTabSettings">
+        <form id="adminSettingsForm" class="admin-settings-form">
+          <div class="form-grid">
+            <label class="form-group">
+              <span>Store Brand Name</span>
+              <input type="text" id="settingStoreName" required>
+            </label>
+            <label class="form-group">
+              <span>Business WhatsApp Number (with country code, e.g. 919511355866)</span>
+              <input type="text" id="settingWhatsApp" required>
+            </label>
+            <label class="form-group">
+              <span>UPI ID for Direct QR Payments (e.g. 9511355866@upi)</span>
+              <input type="text" id="settingUpiId" required>
+            </label>
+            <label class="form-group">
+              <span>Free Delivery Minimum Order Amount (₹)</span>
+              <input type="number" id="settingFreeDelivery" min="0" required>
+            </label>
+            <label class="form-group">
+              <span>Standard Delivery Fee for Smaller Orders (₹)</span>
+              <input type="number" id="settingShippingFee" min="0" required>
+            </label>
+            <label class="form-group">
+              <span>Top Announcement Text</span>
+              <input type="text" id="settingAnnouncement">
+            </label>
+          </div>
+          <button class="primary-btn" type="submit">Save Store Settings</button>
+        </form>
+      </div>
+
+      <!-- Tab 3: Products & Pricing -->
+      <div class="admin-tab-pane" id="adminTabProducts">
+        <div class="admin-toolbar">
+          <p class="small-text">Quickly modify prices or toggle in-stock status for all organic products.</p>
+        </div>
+        <div id="adminProductList" class="admin-product-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
